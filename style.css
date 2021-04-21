@@ -1,47 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
-  #form {
-    margin-top: 50px;
-    /* display: flex;
-    justify-content: center;
-    align-content: center; */
-    padding-bottom: 150px;
-  }
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  margin: 20px 10px;
+  padding: 0;
+  color: white;
+  text-align: center;
+/*   background-color:#05060d; */
+}
+.be_table{
+  border: none;
+  border-collapse: collapse;
+  border-radius: 10px;
+}
+th{
+  font-size: 20px;
+  line-height: 1em;
+  font-weight: 500;
+  padding: 14px 35px;
+}
+
+.platforms{
+  font-size: 18px;
+  line-height: 1em;
+  font-weight: 700;
+  color: #A5A9BA;
+  padding: 14px 35px;
+}
+
+td{
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1em;
+  color: #A5A9BA;
+  padding: 14px 35px;
+}
+
+tr{
+  background-color: #0A0C14;
   
-  .container {
-    display: flex;
-    justify-content: center;
-  }
-          #input {
-    display: inline-block;
-    text-align: center;
-    vertical-align: middle;
-    width: 200px;
-    height: 150px;
-    color: #444;
-    font-size: 2em;
-    background-color: #ddd;
-    padding: 8px;
-    border: 1px solid #ccc;
-    cursor: pointer;
-  }
-  
-  .autoUpdateText {
-    display: inline-block;
-    font-weight: 900;
-    font-size: 1.5em;
-    line-height: 1em;
-    font-family: monospace;
-  }
-  
-  .autoUpdateText:hover {
-    border-bottom: 0.15em solid white;
-  }
-  table{
-      text-align: center;
-      display:flexbox;
-      align-items: center;
-  }
-  td{
-      width: 200px;
-      height: 50px;
-  }
+  border: 5px solid #05060d;
+}
+/* tbody{
+  background-color:#05060d;
+} */
+
+tbody :hover{
+      background-color: #FFEE62;
+      color: #05060d;
+}
+
+
+td:first-child,
+th:first-child {
+  border-radius: 15px 0 0 15px;
+}
+td:last-child,
+th:last-child {
+  border-radius: 0 15px 15px 0;
+}
