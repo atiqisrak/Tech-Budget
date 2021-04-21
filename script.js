@@ -59,6 +59,38 @@
         document.getElementById("estimated_clicks_2").innerHTML = (((Number(input.value)*0.2)*2.65)/m2).toFixed(2);
         document.getElementById("estimated_impression_2").innerHTML = ((((Number(input.value)*0.2)*2.65)/l2)*1000).toFixed(2);
 
+        // SnapChat
+
+        document.getElementById("n2m_bhd_2").innerHTML = (Number(input.value)*0.15).toFixed(2);
+        document.getElementById("n2m_usd_2").innerHTML = ((Number(input.value)*0.3)*2.65).toFixed(2);
+        document.getElementById("estimated_leads_2").innerHTML = (((Number(input.value)*0.2)*2.65)/n2).toFixed(2);
+        document.getElementById("estimated_clicks_2").innerHTML = (((Number(input.value)*0.2)*2.65)/m2).toFixed(2);
+        document.getElementById("estimated_impression_2").innerHTML = ((((Number(input.value)*0.2)*2.65)/l2)*1000).toFixed(2);
+
+        // Google Search
+
+        document.getElementById("n2m_bhd_2").innerHTML = (Number(input.value)*0.3).toFixed(2);
+        document.getElementById("n2m_usd_2").innerHTML = ((Number(input.value)*0.3)*2.65).toFixed(2);
+        document.getElementById("estimated_leads_2").innerHTML = (((Number(input.value)*0.2)*2.65)/n2).toFixed(2);
+        document.getElementById("estimated_clicks_2").innerHTML = (((Number(input.value)*0.2)*2.65)/m2).toFixed(2);
+        document.getElementById("estimated_impression_2").innerHTML = ((((Number(input.value)*0.2)*2.65)/l2)*1000).toFixed(2);
+
+        // GA (display)
+
+        document.getElementById("n2m_bhd_2").innerHTML = (Number(input.value)*0.3).toFixed(2);
+        document.getElementById("n2m_usd_2").innerHTML = ((Number(input.value)*0.3)*2.65).toFixed(2);
+        document.getElementById("estimated_leads_2").innerHTML = (((Number(input.value)*0.2)*2.65)/n2).toFixed(2);
+        document.getElementById("estimated_clicks_2").innerHTML = (((Number(input.value)*0.2)*2.65)/m2).toFixed(2);
+        document.getElementById("estimated_impression_2").innerHTML = ((((Number(input.value)*0.2)*2.65)/l2)*1000).toFixed(2);
+
+        // LinkedIn
+
+        document.getElementById("n2m_bhd_2").innerHTML = (Number(input.value)*0.3).toFixed(2);
+        document.getElementById("n2m_usd_2").innerHTML = ((Number(input.value)*0.3)*2.65).toFixed(2);
+        document.getElementById("estimated_leads_2").innerHTML = (((Number(input.value)*0.2)*2.65)/n2).toFixed(2);
+        document.getElementById("estimated_clicks_2").innerHTML = (((Number(input.value)*0.2)*2.65)/m2).toFixed(2);
+        document.getElementById("estimated_impression_2").innerHTML = ((((Number(input.value)*0.2)*2.65)/l2)*1000).toFixed(2);
+
         });
 
         form.addEventListener("submit", function (e) {
