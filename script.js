@@ -40,7 +40,9 @@
         const n5 = 30;
         const n6 = 50;
 
-    
+        function maximize(){
+            document.getElementById('input').setAttribute('maxLength',4);    
+        }
         // Facebook
         input.addEventListener("input", function (e) {
         // h1.innerHTML = input.value;
