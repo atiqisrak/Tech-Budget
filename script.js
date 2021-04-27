@@ -40,9 +40,6 @@
         const n5 = 30;
         const n6 = 50;
 
-        function maximize(){
-            document.getElementById('input').setAttribute('maxLength',4);    
-        }
         // Facebook
         input.addEventListener("input", function (e) {
         // h1.innerHTML = input.value;
@@ -98,3 +95,108 @@
         form.addEventListener("submit", function (e) {
             e.preventDefault();
         });
+
+
+
+
+
+        // Chart JS
+
+window.chartColors = {
+	red: 'rgb(255, 99, 132)',
+	orange: 'rgb(255, 159, 64)',
+	yellow: 'rgb(255, 205, 86)',
+	green: 'rgb(75, 192, 192)',
+	blue: 'rgb(54, 162, 235)',
+	purple: 'rgb(153, 102, 255)',
+	grey: 'rgb(231,233,237)'
+};
+
+var chart1 = document.getElementById('chart-area1');
+var chart2 = document.getElementById('chart-area2');
+var chart3 = document.getElementById('chart-area3');
+var chart4 = document.getElementById('chart-area4');
+
+// chart2.height = 30;
+
+const myChart1 = new Chart(chart1.getContext("2d"), {
+  type: 'bar',
+  data: {
+    labels: ['Facebook', 'Instagram', 'SnapChat', 'Google Search', 'GA (display)', 'LinkedIn'],
+    datasets: [{
+      label: 'My data',
+      data: [662500, 504762, 159000, 8567, 265000, 265000],
+      backgroundColor: '#656D8F',
+      borderColor: '#656D8F',
+      borderWidth: 1
+    }]
+  },
+  options: {
+  	animation: {
+    	duration: 1500,
+    }
+  }
+});
+
+
+const myChart2 = new Chart(chart2.getContext("2d"), {
+  type: 'doughnut',
+  data: {
+    labels: ['Facebook', 'Instagram', 'SnapChat', 'Google Search', 'GA (display)', 'LinkedIn'],
+    datasets: [{
+      label: 'My data',
+      data: [400, 600, 300, 300, 200, 200],
+      backgroundColor: ['#EA4335', '#FBBC04', '#34A853', '#FF6D01', '#27F0FF', '#83A7E5', ]
+    }]
+  },
+  options: {
+    // maintainAspectRatio:true,
+    maintainAspectRatio:false,
+    responsive:true,
+    height:200,
+    // weight:200,
+  	animation: {
+    	duration: 1500,
+    }
+  }
+});
+
+
+const myChart3 = new Chart(chart3.getContext("2d"), {
+  type: 'bar',
+  data: {
+    labels: ['Facebook', 'Instagram', 'SnapChat', 'Google Search', 'GA (display)', 'LinkedIn'],
+    datasets: [{
+      label: 'Estimated Leads',
+      data: [53,27,20,27,18,11],
+      backgroundColor: '#656D8F',
+      borderColor: '#656D8F',
+      borderWidth: 1
+    }]
+  },
+  options: {
+  	animation: {
+    	duration: 1500,
+    }
+  }
+});
+
+
+const myChart4 = new Chart(chart4.getContext("2d"), {
+  type: 'bar',
+  data: {
+    labels: ['Facebook', 'Instagram', 'SnapChat', 'Google Search', 'GA (display)', 'LinkedIn'],
+    datasets: [{
+      label: 'Estimated Clicks',
+      data: [707,530,227,360,237,237],
+      backgroundColor: '#656D8F',
+      borderColor: '#656D8F',
+      borderWidth: 1
+    }]
+  },
+  options: {
+  	animation: {
+    	duration: 1500,
+    }
+  }
+});

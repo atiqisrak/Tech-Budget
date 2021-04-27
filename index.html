@@ -1,145 +1,207 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Tech Budget</title>
+    <title>Chartbusters</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <link id="stylee" rel="stylesheet" href="style.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  </head>
+<style>
+    #canvas-holder {
+  width: 100%;
+  margin-top: 50px;
+  text-align: center;
+}
+
+#chartjs-tooltip {
+  opacity: 1;
+  position: absolute;
+  background: rgba(0, 0, 0, .7);
+  color: white;
+  border-radius: 3px;
+  -webkit-transition: all .1s ease;
+  transition: all .1s ease;
+  pointer-events: none;
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+}
+
+.chartjs-tooltip-key {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+}
+</style>  
 
 
+</head>
   <body>
-    
-    <!-- <div class="container">
-      <div class="autoUpdateText"></div>
-  </div> -->
 
-  <!-- Descriptions -->
-<div class="descriptions">
-  <form action="/profile" id="form" class="bhd-form" autocomplete="off">
-   <span class="gradient">Budget &nbsp</span> BHD
-  <input type="number" min="1" max="9999" id="input" placeholder="2000" class="bhd-input">
-</form>
+    <div class="descriptions">
+        <form action="/profile" id="form" class="bhd-form" autocomplete="off">
+         <span class="gradient">Budget &nbsp</span> BHD
+        <input type="number" min="1" max="9999" id="input" placeholder="2000" class="bhd-input">
+      </form>
+      
+      <div class="dummy-text1">
+        Get an estimated media plan<br>
+      </div>
+      
+      <div class="dummy-text2">
+        <span class="bold-span">Language:</span> English & Arabic
+      </div>
+      
+      <div class="dummy-text3">
+        <span class="bold-span">Market:</span> Bahrain
+      </div>
+      
 
-<div class="dummy-text1">
-  Get an estimated media plan<br>
-</div>
-
-<div class="dummy-text2">
-  <span class="bold-span">Language:</span> English & Arabic
-</div>
-
-<div class="dummy-text3">
-  <span class="bold-span">Market:</span> Bahrain
-</div>
-
-<!-- Download pdf button -->
-<div class="print2pdf">
-  <button type="button" class="btn btn-danger" 
-  id="btPrint" onclick="PrintTable()">
-    Create PDF</button>
-</div>
-
-</div>
-
-
-<!-- Table Part -->
-<div class="table-responsive tech-table">
-<table class="be_table" id="tab" border="1">
-  <thead>
-    <tr>
-      <th scope="col">Portal/Site</th>
-      <th scope="col">Placement/ Targeting</th>
-      <th scope="col">Estimated Impressions</th>
-      <th scope="col">Estimated Reach</th>
-      <th scope="col">Estimated Clicks</th>
-      <th scope="col">Estimated Leads </th>
-      <th scope="col">Total Net to Media USD</th>
-      <th scope="col">Total Net to Media BHD</th>
-    </tr>
-  </thead>
-  <tbody>
-    <!-- Facebook -->
-      <tr>
-          <td class="platforms" scope="row">Facebook
-          </td>
-          <td>News Feed</td>
-          <td id="estimated_impression_1">1,656,250</td>
-          <td id="estimated_reach_1">450,000</td>
-          <td id="estimated_clicks_1">1,767</td>
-          <td id="estimated_leads_1">133</td>
-          <td id="n2m_usd_1">$ 2,650.00</td>
-          <td id="n2m_bhd_1">1,000</td>
-      </tr>
-      <!-- Instagram -->
-      <tr>
-          <td class="platforms" scope="row">Instagram</td>
-          <td>News Feed</td>
-          <td id="estimated_impression_2">1,892,857</td>
-          <td id="estimated_reach_2">390,000</td>
-          <td id="estimated_clicks_2">1,988</td>
-          <td id="estimated_leads_2">99</td>
-          <td id="n2m_usd_2"> $ 3,975.00 </td>
-          <td id="n2m_bhd_2">1,500</td>
-      </tr>
-
-            <!-- SnapChat -->
-            <tr>
-              <td class="platforms" scope="row">SnapChat</td>
-              <td>Feed</td>
-              <td id="estimated_impression_3">1,192,500</td>
-              <td id="estimated_reach_3">242,000</td>
-              <td id="estimated_clicks_3">1,704</td>
-              <td id="estimated_leads_3">149</td>
-              <td id="n2m_usd_3">$ 5,962.50</td>
-              <td id="n2m_bhd_3">2,250</td>
-          </tr>
-          <!-- Google Search -->
-      <tr>
-          <td class="platforms" scope="row">Google Search</td>
-          <td>Google</td>
-          <td id="estimated_impression_4">64,251</td>
-          <td id="estimated_reach_4">As per Search</td>
-          <td id="estimated_clicks_4">2,698</td>
-          <td id="estimated_leads_4">199</td>
-          <td id="n2m_usd_4">$5,962.50 </td>
-          <td id="n2m_bhd_4">2,250</td>
-      </tr>
-          <!-- GA (display)  -->
+      <!-- Download pdf button -->
+      <div class="print2pdf">
+        <button type="button" class="btn btn-danger" 
+        id="btPrint" onclick="printTable();printChart1();printChart2();printChart3();printChart4();">
+          Create PDF</button>
+      </div>
+      
+      </div>
+      
+      
+      <!-- Table Part -->
+      <div class="table-responsive tech-table">
+      <table class="be_table" id="tab" border="1">
+        <thead>
           <tr>
-            <td class="platforms" scope="row">GA (display)</td>
-            <td>RON</td>
-            <td id="estimated_impression_5">1,987,500</td>
-            <td id="estimated_reach_5">450,000</td>
-            <td id="estimated_clicks_5">1,775</td>
-            <td id="estimated_leads_5">133</td>
-            <td id="n2m_usd_5">$3,975.00</td>
-            <td id="n2m_bhd_5">1,500</td>
-        </tr>          
-        <!-- LinkedIn -->
-        <tr>
-            <td class="platforms" scope="row">LinkedIn</td>
-            <td>RON</td>
-            <td id="estimated_impression_6">1,987,500</td>
-            <td id="estimated_reach_6">450,000</td>
-            <td id="estimated_clicks_6">1,775</td>
-            <td id="estimated_leads_6">80</td>
-            <td id="n2m_usd_6">$3,975.00</td>
-            <td id="n2m_bhd_6">1,500</td>
-        </tr>
-  </tbody>
-</table>
+            <th scope="col">Portal/Site</th>
+            <th scope="col">Placement/ Targeting</th>
+            <th scope="col">Estimated Impressions</th>
+            <th scope="col">Estimated Reach</th>
+            <th scope="col">Estimated Clicks</th>
+            <th scope="col">Estimated Leads </th>
+            <th scope="col">Total Net to Media USD</th>
+            <th scope="col">Total Net to Media BHD</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Facebook -->
+            <tr>
+                <td class="platforms" scope="row">Facebook <i class="fa fa-facebook" aria-hidden="true"></i>
+                </td>
+                <td>News Feed</td>
+                <td id="estimated_impression_1">1,656,250</td>
+                <td id="estimated_reach_1">450,000</td>
+                <td id="estimated_clicks_1">1,767</td>
+                <td id="estimated_leads_1">133</td>
+                <td id="n2m_usd_1">$ 2,650.00</td>
+                <td id="n2m_bhd_1">1,000</td>
+            </tr>
+            <!-- Instagram -->
+            <tr>
+                <td class="platforms" scope="row">Instagram <i class="fa fa-instagram" aria-hidden="true"></i></td>
+                <td>News Feed</td>
+                <td id="estimated_impression_2">1,892,857</td>
+                <td id="estimated_reach_2">390,000</td>
+                <td id="estimated_clicks_2">1,988</td>
+                <td id="estimated_leads_2">99</td>
+                <td id="n2m_usd_2"> $ 3,975.00 </td>
+                <td id="n2m_bhd_2">1,500</td>
+            </tr>
+      
+                  <!-- SnapChat -->
+                  <tr>
+                    <td class="platforms" scope="row">SnapChat</td>
+                    <td>Feed</td>
+                    <td id="estimated_impression_3">1,192,500</td>
+                    <td id="estimated_reach_3">242,000</td>
+                    <td id="estimated_clicks_3">1,704</td>
+                    <td id="estimated_leads_3">149</td>
+                    <td id="n2m_usd_3">$ 5,962.50</td>
+                    <td id="n2m_bhd_3">2,250</td>
+                </tr>
+                <!-- Google Search -->
+            <tr>
+                <td class="platforms" scope="row">Google Search</td>
+                <td>Google</td>
+                <td id="estimated_impression_4">64,251</td>
+                <td id="estimated_reach_4">As per Search</td>
+                <td id="estimated_clicks_4">2,698</td>
+                <td id="estimated_leads_4">199</td>
+                <td id="n2m_usd_4">$5,962.50 </td>
+                <td id="n2m_bhd_4">2,250</td>
+            </tr>
+                <!-- GA (display)  -->
+                <tr>
+                  <td class="platforms" scope="row">GA (display)</td>
+                  <td>RON</td>
+                  <td id="estimated_impression_5">1,987,500</td>
+                  <td id="estimated_reach_5">450,000</td>
+                  <td id="estimated_clicks_5">1,775</td>
+                  <td id="estimated_leads_5">133</td>
+                  <td id="n2m_usd_5">$3,975.00</td>
+                  <td id="n2m_bhd_5">1,500</td>
+              </tr>          
+              <!-- LinkedIn -->
+              <tr>
+                  <td class="platforms" scope="row">LinkedIn</td>
+                  <td>RON</td>
+                  <td id="estimated_impression_6">1,987,500</td>
+                  <td id="estimated_reach_6">450,000</td>
+                  <td id="estimated_clicks_6">1,775</td>
+                  <td id="estimated_leads_6">80</td>
+                  <td id="n2m_usd_6">$3,975.00</td>
+                  <td id="n2m_bhd_6">1,500</td>
+              </tr>
+        </tbody>
+      </table>
+     </div>
 
-</div>
-    <!-- Optional JavaScript -->
-    <script src="script.js"></script>
-    <script src="print2pdf.js"></script>
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
-</html>
+
+     <div class="chartsjs">
+      <div class="ro">
+        <div class="kolam left">
+          <h6>Estimated Impressions vs Portal/Site</h6>
+          <canvas class="chart" id="chart-area1"/>
+        </div>
+          
+        <h6>Total Net to Media BHD</h6>
+        <!-- <div id="chartjs-tooltip"></div> -->
+        <div class="kolam right">
+          <canvas class="d-chart" id="chart-area2" height="200"/>
+        </div>
+        <!-- <div id="chartjs-tooltip"></div> -->
+      </div>
+      
+      <div class="ro">
+        <div class="kolam left">
+          <h6> Estimated Leads per channel</h6>
+          <canvas class="chart" id="chart-area3"/>
+        </div>
+          
+        <!-- <div id="chartjs-tooltip"></div> -->
+        <div class="kolam right">
+          <h6>Estimated Clicks vs Portal/Site</h6>
+          <canvas class="chart" id="chart-area4"/>
+        </div>
+        <!-- <div id="chartjs-tooltip"></div> -->
+      </div>
+     </div>
+
+    <!-- <div id="piechart" style="z-index: 9999;"></div> -->
+    
+        <!-- Optional JavaScript -->
+        <!-- <script src="script-main.js"></script> -->
+        <script src="print2pdf.js"></script>
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js' integrity='sha512-VMsZqo0ar06BMtg0tPsdgRADvl0kDHpTbugCBBrL55KmucH6hP9zWdLIWY//OTfMnzz6xWQRxQqsUFefwHuHyg==' crossorigin='anonymous'></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="script-main.js"></script>
+        <!-- <script src="https://gist.github.com/johannesjo/6b11ef072a0cb467cc93a885b5a1c19f.js"></script> -->
+    </body>
+    </html>
