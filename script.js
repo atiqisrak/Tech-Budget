@@ -138,28 +138,33 @@ duration: 1500,
 });
 
 
-const myChart2 = new Chart(chart2.getContext("2d"), {
-type: 'doughnut',
-data: {
-labels: ['Facebook', 'Instagram', 'SnapChat', 'Google Search', 'GA (display)', 'LinkedIn'],
-datasets: [{
-label: 'My data',
-data: [400, 600, 300, 300, 200, 200],
-backgroundColor: ['#EA4335', '#FBBC04', '#34A853', '#FF6D01', '#27F0FF', '#83A7E5', ],
-borderColor: '#05060d',
-borderWidth:1
-}]
-},
-options: {
-// maintainAspectRatio:true,
-maintainAspectRatio:false,
-responsive:true,
-height:400,
-// weight:200,
-animation: {
-duration: 1500,
-}
-}
+const myChart2 = new Chart(chart2.getContext("2d"), 
+{
+    type: 'doughnut',
+    data: {
+        labels: ['Facebook', 'Instagram', 'SnapChat', 'Google Search', 'GA (display)', 'LinkedIn'],
+        datasets: [{
+            label: 'My data',
+            data: [400, 600, 300, 300, 200, 200],
+            backgroundColor: ['#EA4335', '#FBBC04', '#34A853', '#FF6D01', '#27F0FF', '#83A7E5', ],
+            borderColor: '#05060d',
+            borderWidth:1
+            }]
+        },
+    options: {
+    // maintainAspectRatio:true,
+        maintainAspectRatio:false,
+        // responsive:true,
+        height:500,
+        legend: false,
+        // {
+        //     display: true,
+        //     position: 'bottom'
+        // },
+        animation: {
+            duration: 1500,
+        }
+    }
 });
 
 

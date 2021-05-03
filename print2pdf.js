@@ -1,5 +1,4 @@
-
-  function printTable(){
+function printTable(){
     var printMe = document.getElementById('tab');
     var wme = window.open("","","width:900,height:900");
 
