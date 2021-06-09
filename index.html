@@ -14,10 +14,21 @@
 </head>
   <body>
     <div class="descriptions">
-      <form action="/profile" id="form" class="bhd-form" autocomplete="off">
-       <span class="gradient">Budget &nbsp</span> BHD
-      <input type="number" min="1" max="9999" id="input" placeholder="2000" class="bhd-input">
-    </form>
+      <!-- <form action="/profile" id="form" class="bhd-form" autocomplete="off"> -->
+    <div class="searchbar">
+      <div class="lefty">
+        <form id="inform" class="bhd-form" autocomplete="off">
+        <span class="gradient">Budget &nbsp</span> BHD
+        <input type="number" class="bhd-input" id="innervalue" min="1" max="9999" id="input" placeholder="2000">
+        </form>
+      </div>
+      <div class="righty">
+        
+        <div class="table_value">
+            <button class="show_button" id="show-button" onclick="myFunction()">Show</button>
+        </div>
+      </div>
+    </div>
 
     <div class="describe-box">
       <div class="desbox">
@@ -38,7 +49,7 @@
       <!-- Download pdf button -->
       <div class="desbox">
         <div class="print2pdf">
-          <button type="button" class="printpdf-button" 
+          <button type="button" class="printpdf-button"
           id="btPrint" onclick="printTable();printChart1();printChart2();printChart3();printChart4();">
             Create PDF</button>
         </div>

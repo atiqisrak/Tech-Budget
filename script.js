@@ -1,4 +1,4 @@
-const input = document.querySelector("#input");
+// const input = document.querySelector("#input");
 const h1 = document.querySelector(".autoUpdateText");
 
 const a1 = document.querySelector(".estimated_impression_1");
@@ -39,9 +39,26 @@ const n4 = 30;
 const n5 = 30;
 const n6 = 50;
 
-// Facebook
-input.addEventListener("input", function (e) {
-// h1.innerHTML = input.value;
+// To watch live changes
+
+
+// Live change
+// input.addEventListener("input", function (e) {
+
+// button change
+//Enter button
+
+var input = document.getElementById("innervalue");
+input.addEventListener("keydown", function(event) {
+    if (event.which === 13) {
+        event.preventDefault();
+        document.getElementById("show-button").click();
+    }
+});
+function myFunction() {
+
+// var input = document.getElementById("innervalue");
+
 document.getElementById("n2m_bhd_1").innerHTML = Math.round(Number(input.value)*0.2);
 document.getElementById("n2m_usd_1").innerHTML = ((Number(input.value)*0.2)*2.65).toFixed(2);
 document.getElementById("estimated_leads_1").innerHTML = Math.round(((Number(input.value)*0.2)*2.65)/n1);
@@ -89,11 +106,13 @@ document.getElementById("estimated_leads_6").innerHTML = Math.round(((Number(inp
 document.getElementById("estimated_clicks_6").innerHTML = Math.round(((Number(input.value)*0.1)*2.65)/m6);
 document.getElementById("estimated_impression_6").innerHTML = Math.round((((Number(input.value)*0.1)*2.65)/l6)*1000);
 
-});
+};
 
-form.addEventListener("submit", function (e) {
-    e.preventDefault();
-});
+//Live change
+// )
+// form.addEventListener("submit", function (e) {
+//     e.preventDefault();
+// });
 
 
 

@@ -46,6 +46,30 @@
   height: 70px;
   caret-color: #747686;
 }
+.searchbar{
+  display: flex;
+}
+.lefty{
+  padding-right: 50px;
+}
+.righty{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.show_button{
+  padding: 10px 30px;
+  background: white;
+  color: #05060d;
+  font-size: 18px;
+  border-color: transparent;
+  border-radius: 5px;
+}
+.show_button:hover{
+  background-color: #FFE31B;
+  color: #05060d;
+  border-color: transparent;
+}
 input[type=number]{
   -moz-appearance: textfield;
 	color:white;
