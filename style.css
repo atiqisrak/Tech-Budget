@@ -89,7 +89,8 @@ input::-webkit-inner-spin-button {
 .printpdf-button{
   background-color: white;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 400;
+  letter-spacing: 0.4px;
   color: #05060d;
   border: none;
   padding: 10px 15px;
@@ -106,6 +107,11 @@ input::-webkit-inner-spin-button {
 .desbox{
   width: 50%;
   display: table-cell;
+}
+.pdf{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 .print2pdf{
   display: flex;
@@ -150,6 +156,7 @@ input::-webkit-inner-spin-button {
 .language-market{
   padding-bottom: 30px;
 }
+
 /* Table Styling */
 .be_table{
   border: none;
@@ -157,7 +164,24 @@ input::-webkit-inner-spin-button {
   border-radius: 10px;
   min-width: 360px;
   overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+  --scrollbarBG: #CFD8DC;
+  --thumbBG: #90A4AE;
 }
+.be_table::-webkit-scrollbar {
+  width: 11px;
+}
+.be_table::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+.be_table::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG) ;
+  border-radius: 6px;
+  border: 3px solid var(--scrollbarBG);
+}
+
+
 .be_table th{
   font-size: 20px;
   line-height: 1em;
