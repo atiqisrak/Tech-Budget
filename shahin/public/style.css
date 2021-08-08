@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap');
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: white;
+/*   text-align: center; */
+  /* background-color:#05060d; */
+}
+.bhd-form{
+  /* background-color: #05060d;   */
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1.6em;
+  display: unset;
+  padding-bottom: 30px;
+	color:white;
+}
+.gradient{
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1.6em;
+	background: linear-gradient(to right, #FFE31B 0%, #ffffff 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.bhd-input{
+  overflow: hidden;
+  margin: 5px 10px;
+  flex-grow: 1;
+  color: white;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 60px;
+  font-weight: 700;
+  text-align: left;
+  padding: 5px 20px;
+  background-color: #05060d;
+  border: none;
+  width: 230px;
+  height: 70px;
+  caret-color: #747686;
+}
+.searchbar{
+  display: flex;
+}
+.lefty{
+  padding-right: 50px;
+}
+.righty{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.show_button{
+  padding: 10px 30px;
+  background: white;
+  color: #05060d;
+  font-size: 18px;
+  border-color: transparent;
+  border-radius: 5px;
+}
+.show_button:hover{
+  background-color: #FFE31B;
+  color: #05060d;
+  border-color: transparent;
+}
+input[type=number]{
+  -moz-appearance: textfield;
+	color:white;
+	border: 1px solid #ffffff1a;
+  padding: 5px 20px;
+}
+input[type=number]:focus{
+	color:white;
+  padding: 5px 20px;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.printpdf-button{
+  background-color: white;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  color: #05060d;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+.printpdf-button:hover{
+  background-color: #FFE31B;
+  color: #05060d;
+}
+.describe-box{
+  width: 100%;
+  display: flex;
+}
+.desbox{
+  width: 50%;
+  display: table-cell;
+}
+.pdf{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.print2pdf{
+  display: flex;
+  justify-content: flex-end;
+}
+.bhd-text{
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 60px;
+  font-weight: 700;
+  color: white;
+}
+.dummy-text1{
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.5em;
+  color: #747686;
+  padding-bottom: 20px;
+  text-align: left;
+}
+.dummy-text2, .dummy-text3{
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5em;
+  color: white;
+  display: unset;
+}
+.dummy-text2{
+  padding-right: 56px;
+}
+.bold-span{
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5em;
+  color: white;
+}
+.descriptions{
+  background-color: #05060d;
+  text-align: left;
+  /* margin: 0 10px; */
+  padding: 0 10px 40px 10px;
+}
+.language-market{
+  padding-bottom: 30px;
+}
+
+/* Table Styling */
+.be_table{
+  border: none;
+  border-collapse: collapse;
+  border-radius: 10px;
+  min-width: 360px;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+  --scrollbarBG: #CFD8DC;
+  --thumbBG: #90A4AE;
+}
+.be_table::-webkit-scrollbar {
+  width: 11px;
+}
+.be_table::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+.be_table::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG) ;
+  border-radius: 6px;
+  border: 3px solid var(--scrollbarBG);
+}
+
+
+.be_table th{
+  font-size: 20px;
+  line-height: 1em;
+  font-weight: 500;
+  line-height: 1.5em;
+	color:white;
+	padding-right:50px;
+}
+.platforms{
+  font-size: 18px;
+  line-height: 1em;
+  font-weight: 700;
+  line-height: 1.5em;
+  color: white;
+}
+td{
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1em;
+  color: #A5A9BA;
+}
+tr{
+  background-color: #0A0C14;
+  height:60px;
+  border: 5px solid #05060d;
+}
+tbody :hover{
+      background-color: #FFEE62;
+      color: #05060d;
+}
+td:first-child,
+th:first-child {
+  border-radius: 15px 0 0 15px;
+}
+td:last-child,
+th:last-child {
+  border-radius: 0 15px 15px 0;
+}
+/* Charts */
+#canvas-holder {
+  width: 100%;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.chartjs-tooltip-key {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+}
+.chartsjs {
+  box-sizing: border-box;
+}
+/* Create two equal columns that floats next to each other */
+.kolam {
+  background: #0A0C14;
+  float: left;
+  width: 50%;
+/*   width: 90%; */
+  padding: 24px 40px;
+}
+.ro1{
+  padding: 50px 10px;
+  display: block;
+  background-color: #0A0C14;
+}
+.piechart{
+  width: 50%;
+}
+.ro1 .left{
+  margin-top: 0.3vh;
+}
+.ro2{
+  padding: 50px 10px;
+  display: block;
+  background-color: #0A0C14;
+}
+.ro2 .left{
+  margin-top: 0.5vh;
+}
+/* Clear floats after the columns */
+.ro1:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .kolam {
+    width: 100%;
+  }
+}
+/* .d-chart{
+  display: block;
+  box-sizing: border-box;
+  height: 300px;
+  width: 300px;
+} */
+h6{
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  background-color: #0A0C14;
+}
+
+
+/* Responsiveness */
+
+/* On screens that are 992px wide or less, go from four columns to two columns */
+@media screen and (max-width: 992px) {
+  .gradient{
+    font-size: 1.5em;
+  }
+  .bhd-form{
+    font-size: 1.3em;
+  }
+  .bhd-input{
+    width: 100px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .dummy-text1{
+    padding-top: 1.5em;
+    font-size: 0.8em;
+  }
+  .dummy-text2, .dummy-text3{
+    font-size: 0.8em;
+  }
+  .bold-span{
+    font-size: 0.9em;
+    font-weight: 500;
+  }
+  .printpdf-button{
+    font-size: 14px;
+    padding:5px 10px;
+  }
+  .print2pdf{
+    padding-top: 2.6em;
+  }
+
+  .be_table th{
+    font-size: 16px;
+  }
+  .platforms{
+    font-size: 14px;
+  }
+  td{
+    font-size: 14px;
+  }
+}
+
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .gradient{
+    font-size: 22px;
+  }
+}
+/* 
+.newline{
+  display: block;
+
+} */
